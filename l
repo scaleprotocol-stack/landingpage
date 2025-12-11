@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scale Protocol - You Are One Step Away</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+    body {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: #ffffff;
+      line-height: 1.9;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Ocean wave background */
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        linear-gradient(180deg, 
+          #000000 0%, 
+          #1a1a1a 20%, 
+          #333333 40%, 
+          #4d4d4d 50%, 
+          #333333 60%, 
+          #1a1a1a 80%, 
+          #000000 100%);
+      background-size: 100% 400%;
+      animation: oceanWave 8s ease-in-out infinite;
+      z-index: -2;
+    }
+
+    .background::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        linear-gradient(90deg, 
+          transparent 0%, 
+          rgba(255, 255, 255, 0.1) 25%, 
+          rgba(255, 255, 255, 0.2) 50%, 
+          rgba(255, 255, 255, 0.1) 75%, 
+          transparent 100%);
+      background-size: 200% 100%;
+      animation: waveShift 6s linear infinite;
+      z-index: -1;
+    }
+
+    .background::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(ellipse at center, 
+          rgba(100, 100, 100, 0.3) 0%, 
+          transparent 70%);
+      animation: pulse 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes oceanWave {
+      0%, 100% {
+        background-position: 0% 0%;
+      }
+      50% {
+        background-position: 0% 100%;
+      }
+    }
+
+    @keyframes waveShift {
+      0% {
+        background-position: 0% 0%;
+      }
+      100% {
+        background-position: 200% 0%;
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        opacity: 0.5;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Content overlay */
+    .overlay {
+      position: relative;
+      background: rgba(0, 0, 0, 0.5);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 60px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+    }
+
+    .cta-button {
+      display: block;
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto 60px;
+      padding: 20px 40px;
+      background: #ffffff;
+      color: #000000;
+      text-align: center;
+      text-decoration: none;
+      font-size: 1.3rem;
+      font-weight: bold;
+      border: 3px solid #ffffff;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .cta-button:hover {
+      background: #000000;
+      color: #ffffff;
+      transform: scale(1.05);
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+      text-align: center;
+      line-height: 1.3;
+      color: #ffffff;
+      font-weight: normal;
+      font-style: italic;
+    }
+
+    .content {
+      font-size: 1.25rem;
+      text-align: left;
+      color: #f0f0f0;
+    }
+
+    .content p {
+      margin-bottom: 25px;
+    }
+
+    .final-cta {
+      margin-top: 60px;
+      text-align: center;
+    }
+
+    .final-question {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-top: 40px;
+      margin-bottom: 30px;
+      color: #ffffff;
+      font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+      .brand {
+        font-size: 1.8rem;
+        margin-bottom: 40px;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      .content {
+        font-size: 1rem;
+      }
+
+      .cta-button {
+        font-size: 1.1rem;
+        padding: 15px 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+  
+  <div class="overlay">
+    <div class="container">
+      <div class="brand">Scale Protocol</div>
+
+      <h1>You Are One Step Away From Revealing Your Identity</h1>
+
+      <div class="content">
+        <p>Transforming your life by following a script is extremely hard.</p>
+        
+        <p>So many fake gurus selling you the same story;<br>
+        "Buy my course to get rich!" "I will help you escape the system!!"</p>
+        
+        <p>I won't get you rich or have you transcend the system.</p>
+        
+        <p>If that's what you're hoping for, don't bother reading this.</p>
+        
+        <p>I will give you the blueprints to achieve that, but you are doing 80% of the work.</p>
+        
+        <p>I was just like you. I knew I had to be different.<br>
+        I tried everything, just like you.<br>
+        My affiliate marketing business? Nothing.<br>
+        Dropshipping? Lost all of my money.<br>
+        I had minimal success in trading, but I couldn't chase minimal.<br>
+        I knew I had to get rich.</p>
+        
+        <p>I was tired of seeing my family work their asses off to feed me.<br>
+        All just for me to rot in my bed.<br>
+        I knew it was unfair.</p>
+        
+        <p>So I went deep into psychology. Health. Sociology. Libido. All of it.<br>
+        I started revealing my Shadow.<br>
+        I started learning about power from the works of Machiavelli.<br>
+        I started being a magnet to girls just because I shifted my mind.<br>
+        It took years to master even 10% of this niche.<br>
+        Seemed impossible at times.<br>
+        But I knew I was wired to be independent.</p>
+        
+        <p>I studied marketing psychology.<br>
+        My friends who study economics are, to this day, filled with envy. Because I know more and am more successful in their niche than them.<br>
+        And I achieved it with my laptop.</p>
+        
+        <p>It's always hard finding like-minded people.<br>
+        But I know they exist.<br>
+        You are an example. You are reading this because you are exactly where I was.<br>
+        That is why I created the Scale Webinar.</p>
+        
+        <p>I pursue meaning in everything. Even the name Scale (to climb up or over (something high and steep)) has a meaning. To climb up in life. To level up in every metric.</p>
+        
+        <p>Not everyone is destined to do that. But if you're reading this, high chances that you are.</p>
+        
+        <p>Skip one night out with this purchase. Drop the Jack Daniels and Belvedere just tonight.</p>
+        
+        <p>The Scale Webinar is a much bigger investment.</p>
+        
+        <p class="final-question">Are you ready to Scale yourself?</p>
+      </div>
+
+      <div class="final-cta">
+        <a href="https://scaleprotocol.gumroad.com/l/sp" class="cta-button" target="_blank" rel="noopener noreferrer">
+          Yes, I'm Ready To Scale
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
